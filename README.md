@@ -50,7 +50,7 @@ directly.
 ## Install
 
 ```bash
-git clone <this-repo-url> turzx-dashboard
+git clone https://github.com/velasco79/turzx-35-dashboard turzx-dashboard
 cd turzx-dashboard
 python3 -m venv .venv
 source .venv/bin/activate

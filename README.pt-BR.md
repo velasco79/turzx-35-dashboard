@@ -50,7 +50,7 @@ aberto do [Turing Smart Screen](https://github.com/mathoudebine/turing-smart-scr
 ## Instalação
 
 ```bash
-git clone <url-deste-repositorio> turzx-dashboard
+git clone https://github.com/velasco79/turzx-35-dashboard turzx-dashboard
 cd turzx-dashboard
 python3 -m venv .venv
 source .venv/bin/activate
