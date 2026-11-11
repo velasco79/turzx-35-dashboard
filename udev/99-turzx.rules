@@ -1,0 +1,15 @@
+# Turzx / Turing CH572 USB mini-monitor (VID:PID 1a86:5722)
+#
+# Install:  sudo cp 99-turzx.rules /etc/udev/rules.d/
+# Reload:   sudo udevadm control --reload && sudo udevadm trigger
+#
+# 1) Stable symlink so the dashboard never depends on which /dev/ttyACMx number
+#    the kernel happened to assign (other USB-CDC devices can steal ttyACM0).
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="5722", \
+    SYMLINK+="ttyCH572", GROUP="dialout", MODE="0660"
+
+# 2) OPTIONAL — auto-restart the dashboard when the screen is (re)plugged.
+#    Uncomment and adjust <user> and the service name to match your setup.
+#    (Requires `loginctl enable-linger <user>` so the user service runs at boot.)
+# ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="5722", \
+#     RUN+="/usr/bin/systemctl --user restart turzx-dashboard.service"

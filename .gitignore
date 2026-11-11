@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+mesh_inbox.jsonl
+*.log
+.DS_Store

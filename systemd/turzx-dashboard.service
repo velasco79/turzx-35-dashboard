@@ -1,0 +1,15 @@
+[Unit]
+Description=Turzx 3.5" Dashboard (paginated: system grid + Meshtastic page)
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+# >>> Adjust YOURUSER and the paths to your install (venv + this repo) <<<
+ExecStart=/home/YOURUSER/turzx-dashboard/.venv/bin/python /home/YOURUSER/turzx-dashboard/dashboard_pages.py --interval 1
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
